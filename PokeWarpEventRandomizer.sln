@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeWarpEventRandomizer", "Pokemon_WarpEventRandomizer\PokeWarpEventRandomizer.csproj", "{1C2DC643-D807-4D6C-8B9C-15874480361E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EC040D35-18BE-4DF1-8BF5-5BB283239775}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C2DC643-D807-4D6C-8B9C-15874480361E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2DC643-D807-4D6C-8B9C-15874480361E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2DC643-D807-4D6C-8B9C-15874480361E}.Debug|x64.ActiveCfg = Debug|x64
+		{1C2DC643-D807-4D6C-8B9C-15874480361E}.Debug|x64.Build.0 = Debug|x64
+		{1C2DC643-D807-4D6C-8B9C-15874480361E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2DC643-D807-4D6C-8B9C-15874480361E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2DC643-D807-4D6C-8B9C-15874480361E}.Release|x64.ActiveCfg = Release|x64
+		{1C2DC643-D807-4D6C-8B9C-15874480361E}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {344A2730-8FB8-4009-BBBE-7E29C661A514}
+	EndGlobalSection
+EndGlobal

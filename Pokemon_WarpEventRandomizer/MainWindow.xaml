@@ -1,0 +1,135 @@
+﻿<Window x:Class="PokeWarpEventRandomizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokeWarpEventRandomizer"
+        mc:Ignorable="d" BorderBrush="Gainsboro" BorderThickness="0"
+        Background="Transparent" WindowStyle="SingleBorderWindow"
+        AllowsTransparency="False" WindowState="Normal"
+        ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="525" Width="400"
+        Loaded="Window_Loaded">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="34" />
+    </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/TitleBarDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border BorderBrush="Gainsboro" BorderThickness="7">
+        <Grid Background="Gainsboro">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!--Window chrome-->
+            <Border Grid.Row="0" BorderBrush="DarkGray" BorderThickness="1">
+                <Grid Grid.Row="0" Height="32" Background="Gainsboro">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Button Name="btnTitle" Content="PokéEmerald RNG Warps" Style="{StaticResource TextButtonStyle}"
+                            Click="btnTitle_Click" FontSize="17" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="btnMinimize" Content="&#xE949;" ToolTip="Minimize"
+                                Style="{StaticResource WindowControlButtonStyle}"
+                                Click="btnMinimize_Click"/>
+                        <Button x:Name="btnClose" Content="&#xE106;" ToolTip="Close"
+                                Style="{StaticResource WindowCloseButtonStyle}"
+                                Click="btnClose_Click" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <!--Content panel-->
+            <Border Grid.Row="1" BorderBrush="DarkGray" BorderThickness="1" Height="auto">
+                <Grid Grid.Row="1">
+                    <DockPanel>
+                        <Grid DockPanel.Dock="Bottom">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="384">
+                                <GroupBox Header="Game Options"
+                                          Width="370" FontSize="16" Margin="0,5,0,0"
+                                          BorderBrush="DarkGray" BorderThickness="2" Padding="0,5">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                        <CheckBox x:Name="cbTeleport" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Enable Teleport/Fly everywhere" IsChecked="True"
+                                                  ToolTip="Enables you to use the field moves 'Teleport' and 'Fly' everywhere, even indoors and in special areas." />
+                                        <CheckBox x:Name="cbEliteWalk" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Disable auto-walking in elite four rooms" IsChecked="True"
+                                                  ToolTip="Disables the bug, where you walk into the void when entering an elite four room." />
+                                        <RadioButton x:Name="rbNoHM" GroupName="HMFix" HorizontalAlignment="Left" FontSize="15"
+                                                     Content="No HM Patch" IsChecked="True" Margin="0,15,0,0"/>
+                                        <RadioButton x:Name="rbWaterfall" GroupName="HMFix" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Receive HM Waterfall after defeating Juan"
+                                                  ToolTip="Enabling this will cause Juan to give you the HM Waterfall after defeating him to prevent softlocks." />
+                                        <RadioButton x:Name="rbAll" GroupName="HMFix" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Receive all HMs after receiving the Pokedex"
+                                                  ToolTip="Enabling this will cause Prof. Birch to give you all HMs after receiving the pokedex and allows you to use them from the beginning." />
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="Gym Options"
+                                          Width="370" FontSize="16"
+                                          BorderBrush="DarkGray" BorderThickness="2" Padding="0,5">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                        <CheckBox x:Name="cbGymLava" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Randomize Interior of Lavaridge Gym"
+                                                  ToolTip="Randomizing the interior of Lavaridge Gym may cause Flannery to be unreachable in some cases!" />
+                                        <CheckBox x:Name="cbGymPetal" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Disable Petalburg Gym Events"
+                                                  ToolTip="Disables all events in Petalburg Gym to make it beatable on first entry, even without the required badges." />
+                                        <CheckBox x:Name="cbGymMoss" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Randomize Interior of Mossdeep Gym"
+                                                  ToolTip="Randomizing the interior of Mossdeep Gym may cause Tate &amp; Liza to be unreachable in some cases!" />
+                                        <CheckBox x:Name="cbGymSootop" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Don't randomize ladder in Sootopolis Gym"
+                                                  ToolTip="Checking this stops the randomizer from randomizing the ladder in Sootopolis Gym, so you can just use it as intended." />
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="Event/Map Options (aka: Easy Mode)"
+                                          Width="370" FontSize="16"
+                                          BorderBrush="DarkGray" BorderThickness="2" Padding="0,5">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                        <CheckBox x:Name="cbRustboroGuard" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Remove stair guard in Devon Corp 1F"
+                                                  ToolTip="Removes the guy blocking the door in Devon Corp 1F." />
+                                        <CheckBox x:Name="cbPetalburgBoy" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Disable walk to Gym in Petalburg"
+                                                  ToolTip="Disables the fixed event, where the boy guides you to the Gym." />
+                                        <CheckBox x:Name="cbSootopolisConnect" HorizontalAlignment="Left" FontSize="15"
+                                                  Content="Connect Sootopolis City"
+                                                  ToolTip="Adds some floor tiles between the three parts of Sootopolis City." />
+                                    </StackPanel>
+                                </GroupBox>
+                                
+                                <Separator Width="384" Margin="0,10,0,0" />
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                            Margin="0,5,0,0">
+                                    <Label Content="Seed:  "
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                                           FontSize="18"
+                                           ToolTip="Leave empty for complete randomness" />
+                                    <TextBox x:Name="txtSeed"
+                                             HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"
+                                             TextWrapping="NoWrap" Text=""
+                                             Width="200" FontSize="17"
+                                             ToolTip="Leave empty for complete randomness" KeyDown="txtSeed_KeyUp" />
+                                </StackPanel>
+                                <Button Content="Randomize"
+                                        HorizontalAlignment="Center" VerticalAlignment="Top"
+                                        Click="Randomize_Click"
+                                        Margin="0,5,0,10" Padding="0,10"
+                                        Width="370" FontSize="20" />
+                            </StackPanel>
+                        </Grid>
+                    </DockPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
