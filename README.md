@@ -6,7 +6,8 @@ To play with your own Seeds, you'll need to build the game yourself ([Take a loo
 
 ## Disclaimer
 As of a while back, this project is nothing more than a project to showcase how to do a complete warp randomization of Pokémon Emerald.
-If you just want to create a randomized ROM, go check out the mod-downloads channel at [Pointcrow's Discord Server](https://discord.com/invite/pointcrow)
+
+If you just want to create a randomized ROM, go check out the mod-downloads channel at [Pointcrow's Discord Server](https://discord.com/invite/pointcrow), but you can still use the .ips-patches I provided, if you want to play with these options.
 
 ## Available Options
 ### Game Options
