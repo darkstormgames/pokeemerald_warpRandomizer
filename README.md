@@ -7,11 +7,7 @@ To play with your own Seeds, you'll need to build the game yourself ([Take a loo
 ## Disclaimer
 As of a while back, this project is nothing more than a project to showcase how to do a complete warp randomization of Pokémon Emerald.
 
-If you just want to create a randomized ROM, go check out the mod-downloads channel at [Pointcrow's Discord Server](https://discord.com/invite/pointcrow), but you can still use the .ips-patches I provided in [the releases](https://github.com/darkstormgames/pokeemerald_warpRandomizer/releases/tag/1.0), if you want to play with these options.
-
-### Disclaimer of the disclaimer
-#### This project will be revived, because Pointcrow got into some legal trouble with Nintendo for sharing these mods and making videos off of them.
-#### Updating everything in here will take a while, because I have to figure out some stuff on how to do all of the randomizing the right way directly on a ROM to make the process easier for everyone.
+If you just want to create a randomized ROM, go check out the mod-downloads channel at [Official Universal Warp Randomizer](https://warprandomizer.com/), but you can still use the .ips-patches I provided in [the releases](https://github.com/darkstormgames/pokeemerald_warpRandomizer/releases/tag/1.0), if you want to play with these options.
 
 ## Available Options
 ### Game Options
